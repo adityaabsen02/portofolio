@@ -15,7 +15,20 @@ body {
     color: #333;
     background-color: #e0f7fa; /* Latar belakang body biru muda */
 }
+.foto-kiri-bawah {
+    position: fixed; /* Menjaga posisi tetap di layar */
+    bottom: 20px;    /* Jarak dari tepi bawah layar */
+    left: 20px;      /* Jarak dari tepi kiri layar */
+    z-index: 10;     /* Memastikan foto berada di atas konten lain */
+}
 
+/* Penempatan untuk FOTO KANAN BAWAH */
+.foto-kanan-bawah {
+    position: fixed; /* Menjaga posisi tetap di layar */
+    bottom: 20px;    /* Jarak dari tepi bawah layar */
+    right: 20px;     /* Jarak dari tepi kanan layar */
+    z-index: 10;     /* Memastikan foto berada di atas konten lain */
+}
 /* Styling Navbar */
 nav {
     display: flex;
@@ -168,3 +181,4 @@ footer {
         margin-bottom: 1rem;
     }
 }
+
