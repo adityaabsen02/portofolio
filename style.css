@@ -1,0 +1,170 @@
+/* Reset dasar untuk konsistensi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scroll saat klik navbar ke section */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #e0f7fa; /* Latar belakang body biru muda */
+}
+
+/* Styling Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff5722; /* Navbar oranye gelap */
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .main a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav .menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav .contact-btn {
+    background-color: #4caf50; /* Tombol hijau */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Styling Sections */
+section {
+    padding: 100px 2rem 2rem; /* Padding atas lebih besar untuk navbar fixed */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home {
+    background-color: #fff3e0; /* Latar home kuning muda */
+    /* Ubah layout untuk home: flex row agar foto di kiri, teks di kanan */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left; /* Teks rata kiri */
+    padding: 100px 2rem;
+}
+
+#home .text-content {
+    flex: 1; /* Teks mengambil ruang lebih */
+    margin-right: 2rem;
+}
+
+#home .profile-img {
+    flex-shrink: 0; /* Foto tidak menyusut */
+}
+
+#about {
+    background-color: #f8bbd9; /* Latar about pink muda */
+}
+
+#projects {
+    background-color: #c8e6c9; /* Latar projects hijau muda */
+}
+
+#contact {
+    background-color: #bbdefb; /* Latar contact biru muda */
+}
+
+/* Styling gambar profil */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+/* Styling untuk projects */
+#projects table {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.project-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#projects a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ff5722; /* Footer oranye gelap */
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsivitas untuk mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav .menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    section {
+        padding: 120px 1rem 2rem;
+    }
+    
+    #home {
+        flex-direction: column; /* Kembali ke column di mobile agar tidak overlap */
+        text-align: center;
+    }
+    
+    #home .text-content {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
