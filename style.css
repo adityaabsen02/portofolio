@@ -6,35 +6,50 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Smooth scroll saat klik navbar ke section */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #e0f7fa; /* Latar belakang body biru muda */
-}
-.foto-kiri-bawah {
-    position: fixed; /* Menjaga posisi tetap di layar */
-    bottom: 20px;    /* Jarak dari tepi bawah layar */
-    left: 20px;      /* Jarak dari tepi kiri layar */
-    z-index: 10;     /* Memastikan foto berada di atas konten lain */
+    background-color: #e0f7fa;
 }
 
-/* Penempatan untuk FOTO KANAN BAWAH */
-.foto-kanan-bawah {
-    position: fixed; /* Menjaga posisi tetap di layar */
-    bottom: 20px;    /* Jarak dari tepi bawah layar */
-    right: 20px;     /* Jarak dari tepi kanan layar */
-    z-index: 10;     /* Memastikan foto berada di atas konten lain */
+/* FOTO KIRI BAWAH */
+.foto-kiri-bawah {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    transition: 0.3s ease;
 }
-/* Styling Navbar */
+
+.foto-kiri-bawah:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* FOTO KANAN BAWAH */
+.foto-kanan-bawah {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    transition: 0.3s ease;
+}
+
+.foto-kanan-bawah:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ff5722; /* Navbar oranye gelap */
+    background-color: #ff5722;
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
@@ -61,19 +76,32 @@ nav .menu a {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+/* Hover menu */
+nav .menu a:hover {
+    background-color: #ff784e;
+    color: #fff;
 }
 
 nav .contact-btn {
-    background-color: #4caf50; /* Tombol hijau */
+    background-color: #4caf50;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
+    transition: 0.3s ease;
 }
 
-/* Styling Sections */
+/* Hover tombol contact */
+nav .contact-btn:hover {
+    background-color: #66d168;
+}
+
+/* Sections */
 section {
-    padding: 100px 2rem 2rem; /* Padding atas lebih besar untuk navbar fixed */
+    padding: 100px 2rem 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -83,78 +111,98 @@ section {
 }
 
 #home {
-    background-color: #fff3e0; /* Latar home kuning muda */
-    /* Ubah layout untuk home: flex row agar foto di kiri, teks di kanan */
+    background-color: #fff3e0;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    text-align: left; /* Teks rata kiri */
+    text-align: left;
     padding: 100px 2rem;
 }
 
 #home .text-content {
-    flex: 1; /* Teks mengambil ruang lebih */
+    flex: 1;
     margin-right: 2rem;
 }
 
 #home .profile-img {
-    flex-shrink: 0; /* Foto tidak menyusut */
+    flex-shrink: 0;
 }
 
-#about {
-    background-color: #f8bbd9; /* Latar about pink muda */
-}
-
-#projects {
-    background-color: #c8e6c9; /* Latar projects hijau muda */
-}
-
-#contact {
-    background-color: #bbdefb; /* Latar contact biru muda */
-}
-
-/* Styling gambar profil */
+/* Foto profil + hover */
 .profile-img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
     margin-top: 20px;
+    transition: 0.3s ease;
 }
 
-/* Styling untuk projects */
+.profile-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* Sections warna */
+#about {
+    background-color: #f8bbd9;
+}
+
+#projects {
+    background-color: #c8e6c9;
+}
+
+#contact {
+    background-color: #bbdefb;
+}
+
+/* Projects table */
 #projects table {
     display: inline-block;
     text-align: center;
     margin-top: 20px;
 }
 
+/* Gambar project + hover */
 .project-img {
     width: 300px;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+    transition: 0.3s ease;
 }
 
+.project-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Link ke project + hover */
 #projects a {
     display: block;
     margin-top: 10px;
     color: #007bff;
     text-decoration: none;
+    transition: 0.3s ease;
+}
+
+#projects a:hover {
+    color: #3399ff;
+    text-decoration: underline;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #ff5722; /* Footer oranye gelap */
+    background-color: #ff5722;
     color: #fff;
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
-/* Responsivitas untuk mobile */
+/* Mobile */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -172,7 +220,7 @@ footer {
     }
     
     #home {
-        flex-direction: column; /* Kembali ke column di mobile agar tidak overlap */
+        flex-direction: column;
         text-align: center;
     }
     
@@ -180,5 +228,58 @@ footer {
         margin-right: 0;
         margin-bottom: 1rem;
     }
+    /* ANIMASI MASUK GLOBAL */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease forwards;
 }
 
+.slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideLeft 1s ease forwards;
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    animation: slideRight 1s ease forwards;
+}
+
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: zoomIn 0.8s ease forwards;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+}
