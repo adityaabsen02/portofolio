@@ -12,50 +12,31 @@ html {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #e0f7fa;
+    color: #f3f3f3;
+    background-color: #1e1e2f;
+
+    /* Overall Fade In */
+    opacity: 0;
+    animation: bodyFade 1.2s ease forwards;
 }
 
-/* FOTO KIRI BAWAH */
-.foto-kiri-bawah {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 10;
-    transition: 0.3s ease;
-}
-
-.foto-kiri-bawah:hover {
-    transform: scale(1.1);
-    filter: brightness(1.1);
-}
-
-/* FOTO KANAN BAWAH */
-.foto-kanan-bawah {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-    transition: 0.3s ease;
-}
-
-.foto-kanan-bawah:hover {
-    transform: scale(1.1);
-    filter: brightness(1.1);
-}
-
-/* Navbar */
+/* Styling Navbar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ff5722;
+    background-color: #3d2b87;
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    /* Slide Down Animation */
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: slideDown 1s ease forwards;
 }
 
 nav .main a {
@@ -72,21 +53,21 @@ nav .menu {
 }
 
 nav .menu a {
-    color: #fff;
+    color: #dcdcff;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: 0.3s ease;
 }
 
-/* Hover menu */
+/* Hover menu navbar */
 nav .menu a:hover {
-    background-color: #ff784e;
+    background-color: #5945b5;
     color: #fff;
 }
 
 nav .contact-btn {
-    background-color: #4caf50;
+    background-color: #26a69a;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -96,10 +77,10 @@ nav .contact-btn {
 
 /* Hover tombol contact */
 nav .contact-btn:hover {
-    background-color: #66d168;
+    background-color: #33c4b7;
 }
 
-/* Sections */
+/* Styling Sections */
 section {
     padding: 100px 2rem 2rem;
     min-height: 100vh;
@@ -108,27 +89,36 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    /* Fade Up Animation */
+    opacity: 0;
+    transform: translateY(45px);
+    animation: fadeUp 1.2s ease forwards;
 }
 
+/* HOME */
 #home {
-    background-color: #fff3e0;
+    background-color: #2e2b4f;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     text-align: left;
     padding: 100px 2rem;
+    animation-delay: 0.2s;
 }
 
 #home .text-content {
     flex: 1;
     margin-right: 2rem;
+
+    /* Slide-in from Left */
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideLeft 1.2s ease forwards;
+    animation-delay: 0.4s;
 }
 
-#home .profile-img {
-    flex-shrink: 0;
-}
-
-/* Foto profil + hover */
+/* Hover foto profil */
 .profile-img {
     width: 200px;
     height: 200px;
@@ -136,40 +126,57 @@ section {
     object-fit: cover;
     margin-top: 20px;
     transition: 0.3s ease;
+
+    /* Zoom In Animation */
+    opacity: 0;
+    transform: scale(0.7);
+    animation: zoomIn 1.2s ease forwards;
+    animation-delay: 0.6s;
 }
 
 .profile-img:hover {
     transform: scale(1.05);
-    filter: brightness(1.05);
 }
 
-/* Sections warna */
+/* Section Warna */
 #about {
-    background-color: #f8bbd9;
+    background-color: #283a5e;
 }
 
 #projects {
-    background-color: #c8e6c9;
+    background-color: #224f43;
 }
 
 #contact {
-    background-color: #bbdefb;
+    background-color: #2b3a4f;
 }
 
-/* Projects table */
+/* PROJECTS */
 #projects table {
     display: inline-block;
     text-align: center;
     margin-top: 20px;
+
+    /* Fade Up Animation */
+    opacity: 0;
+    transform: translateY(45px);
+    animation: fadeUp 1.2s ease forwards;
+    animation-delay: 0.5s;
 }
 
-/* Gambar project + hover */
+/* Project Image */
 .project-img {
     width: 300px;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
     transition: 0.3s ease;
+
+    /* Zoom In */
+    opacity: 0;
+    transform: scale(0.8);
+    animation: zoomIn 1.2s ease forwards;
+    animation-delay: 0.7s;
 }
 
 .project-img:hover {
@@ -177,109 +184,92 @@ section {
     filter: brightness(1.1);
 }
 
-/* Link ke project + hover */
+/* Project Link */
 #projects a {
     display: block;
     margin-top: 10px;
-    color: #007bff;
+    color: #6ab8ff;
     text-decoration: none;
     transition: 0.3s ease;
+
+    /* Fade in */
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 0.9s;
 }
 
 #projects a:hover {
-    color: #3399ff;
-    text-decoration: underline;
+    color: #9cd3ff;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #ff5722;
+    background-color: #3d2b87;
     color: #fff;
     position: relative;
     bottom: 0;
     width: 100%;
+
+    /* Fade In */
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 1s;
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         padding: 1rem;
     }
-    
+
     nav .menu {
         flex-direction: column;
         gap: 0.5rem;
         margin-top: 1rem;
     }
-    
+
     section {
         padding: 120px 1rem 2rem;
     }
-    
+
     #home {
         flex-direction: column;
         text-align: center;
     }
-    
+
     #home .text-content {
         margin-right: 0;
         margin-bottom: 1rem;
     }
-    /* ANIMASI MASUK GLOBAL */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeIn 1s ease forwards;
 }
 
-.slide-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    animation: slideLeft 1s ease forwards;
+/* ============================= */
+/* ANIMASI KEYFRAMES             */
+/* ============================= */
+
+@keyframes bodyFade {
+    to { opacity: 1; }
 }
 
-.slide-right {
-    opacity: 0;
-    transform: translateX(40px);
-    animation: slideRight 1s ease forwards;
+@keyframes slideDown {
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.zoom-in {
-    opacity: 0;
-    transform: scale(0.8);
-    animation: zoomIn 0.8s ease forwards;
-}
-
-/* KEYFRAMES */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes zoomIn {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    to { opacity: 1; transform: scale(1); }
 }
 
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
